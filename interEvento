@@ -1,0 +1,144 @@
+package Olimpiadas;
+
+import java.util.Scanner;
+
+public class InterEvento {
+    public static void main(String[] args) {
+        PanArray panArray = new PanArray(100);
+        Scanner scanner = new Scanner(System.in);
+
+        boolean exit = false;
+        while (!exit) {
+            System.out.println("\n--- Menu ---");
+            System.out.println("1. Cadastrar um Evento");
+            System.out.println("2. Remover um Evento");
+            System.out.println("3. Consultar os dados de um determinado evento");
+            System.out.println("4. Iniciar a venda de ingressos para um determinado evento");
+            System.out.println("5. Encerrar a venda de ingressos para um determinado evento");
+            System.out.println("6. Cancelar um determinado evento");
+            System.out.println("7. Marcar um determinado evento como já ocorrido");
+            System.out.println("8. Consultar a quantidade de lugares livres para um determinado evento");
+            System.out.println("9. Vender ingresso de um determinado evento");
+            System.out.println("10. Vender ingresso de um evento com quantidade de ingressos default");
+            System.out.println("11. Listar os dados de todos os eventos");
+            System.out.println("0. Sair");
+
+            System.out.print("Escolha uma opção: ");
+            int option = scanner.nextInt();
+
+            switch (option) {
+                case 1:
+                    cadastrarEvento(panArray, scanner);
+                    break;
+                case 2:
+                    removerEvento(panArray, scanner);
+                    break;
+                case 3:
+                    consultarEvento(panArray, scanner);
+                    break;
+                case 4:
+                    iniciarVenda(panArray, scanner);
+                    break;
+                case 5:
+                    encerrarVenda(panArray, scanner);
+                    break;
+                case 6:
+                    cancelarEvento(panArray, scanner);
+                    break;
+                case 7:
+                    marcarEventoOcorrido(panArray, scanner);
+                    break;
+                case 8:
+                    consultarLugaresLivres(panArray, scanner);
+                    break;
+                case 9:
+                    venderIngresso(panArray, scanner);
+                    break;
+                case 10:
+                    venderIngresso(panArray, scanner);
+                    break;
+                case 11:
+                    listarEventos(panArray);
+                    break;
+                case 0:
+                    exit = true;
+                    System.out.println("Encerrando o programa. Até mais!");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
+
+    private static void venderIngresso(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void consultarLugaresLivres(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void marcarEventoOcorrido(PanArray panArray, Scanner scanner) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void cancelarEvento(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void encerrarVenda(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void iniciarVenda(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void consultarEvento(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void removerEvento(PanArray panArray, Scanner scanner) {
+
+
+	}
+
+	private static void cadastrarEvento(PanArray panArray, Scanner scanner) {
+        System.out.print("Digite o título do evento: ");
+        String titulo = scanner.nextLine();
+
+        System.out.print("Digite o local do evento: ");
+        String local = scanner.nextLine();
+
+        System.out.print("Digite a data do evento: ");
+        String data = scanner.nextLine();
+
+        System.out.print("Digite a hora do evento: ");
+        String hora = scanner.nextLine();
+
+        System.out.print("Digite a capacidade do evento: ");
+        int capacidade = scanner.nextInt();
+
+        System.out.print("Digite o valor do ingresso: ");
+        double valorIngresso = scanner.nextDouble();
+
+        Evento evento = new Evento(titulo, local, data, hora, capacidade, valorIngresso);
+        panArray.adicionarEvento(evento);
+        System.out.println("Evento cadastrado com sucesso!");
+    }
+
+
+
+    private static void listarEventos(PanArray panArray) {
+        panArray.listarEventos();
+    }
+}
+
